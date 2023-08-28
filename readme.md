@@ -1,4 +1,4 @@
-# Frontend Mentor - Entertainment web app solution
+# Frontend Mentor Challenge- Entertainment web app 
 
 ### The challenge
 
