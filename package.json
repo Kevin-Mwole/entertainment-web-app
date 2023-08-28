@@ -1,0 +1,58 @@
+{
+  "name": "remix-app-template",
+  "private": true,
+  "description": "",
+  "license": "",
+  "sideEffects": false,
+  "prisma": {
+    "seed": "node --require esbuild-register prisma/seed.ts"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production remix build",
+    "dev": "cross-env NODE_ENV=development remix dev",
+    "postinstall": "remix setup node",
+    "start": "cross-env NODE_ENV=production remix-serve build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic",
+    "docker": "docker-compose up -d",
+    "setup:db": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.10.0",
+    "@remix-run/react": "^1.2.3",
+    "@remix-run/vercel": "^1.3.2",
+    "bcryptjs": "^2.4.3",
+    "clsx": "^1.1.1",
+    "cross-env": "^7.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "remix": "^1.2.3",
+    "zod": "^3.14.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.7",
+    "@remix-run/dev": "^1.2.3",
+    "@remix-run/eslint-config": "^1.2.3",
+    "@remix-run/serve": "^1.2.3",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "0.0.9",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "babel-loader": "^8.2.3",
+    "chromatic": "^6.5.3",
+    "esbuild-register": "^3.3.2",
+    "eslint": "^8.9.0",
+    "eslint-plugin-storybook": "^0.5.7",
+    "prisma": "^3.10.0",
+    "typescript": "^4.5.5"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
