@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String   @id @default(uuid())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  email           String   @unique
+  passwordHash    String
+  bookmarkedMedia Media[]
+}
+
+model Category {
+  id      String  @id @default(uuid())
+  name    String  @unique
+  display String
+  media   Media[]
+}
+
+model Media {
+  id         String   @id @default(uuid())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  title      String
+  year       Int
+  category   Category @relation(fields: [categoryId], references: [id])
+  categoryId String
+  rating     String
+  isTrending Boolean
+  image      String
+  users      User[]
+}
