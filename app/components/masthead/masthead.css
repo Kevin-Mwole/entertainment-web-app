@@ -1,0 +1,33 @@
+.masthead {
+  padding: var(--space-s-l);
+  background-color: var(--gray-200);
+  display: flex;
+  align-items: center;
+}
+
+.masthead > :nth-child(2) {
+  flex-grow: 1;
+}
+
+.masthead .logo {
+  width: var(--space-m-m);
+}
+.masthead button {
+  background: transparent;
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .masthead {
+    border-radius: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .masthead {
+    flex-direction: column;
+    --nav-direction: column;
+    --nav-justify: flex-start;
+    gap: 4.5rem;
+  }
+}
