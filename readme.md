@@ -1,6 +1,4 @@
-# Frontend Mentor Challenge- Entertainment web app 
-
-### The challenge
+### Frontend Mentor Challenge- Entertainment web app 
 
 Users should be able to:
 
